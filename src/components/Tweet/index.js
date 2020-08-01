@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Header from "./Header";
 import ActionBar from "./ActionBar";
 import { TweetContext } from "./TweetContext";
-const moment = require("moment");
 
 const Tweet = () => {
   const {
@@ -15,8 +14,9 @@ const Tweet = () => {
     isRetweetedByCurrentUser,
     isLikedByCurrentUser,
     date,
+    numOfLikes,
+    numOfRetweets,
   } = useContext(TweetContext);
-  console.log(date);
   return (
     <Wrapper>
       <Header
@@ -25,10 +25,12 @@ const Tweet = () => {
         avatarSrc={avatarSrc}
       />
       <TweetContents>{tweetContents}</TweetContents>
-      <Timestamp>
-        {moment(date).format("h:mm A - MMM Do YYYY").toString()}
-      </Timestamp>
+      <Timestamp>{date}</Timestamp>
       <Divider />
+      <Stats>
+        {numOfRetweets} Retweets {numOfLikes} Likes
+      </Stats>
+      <Divider></Divider>
       <ActionBar
         isRetweetedByCurrentUser={isRetweetedByCurrentUser}
         isLikedByCurrentUser={isLikedByCurrentUser}
