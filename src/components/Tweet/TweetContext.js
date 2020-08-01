@@ -10,6 +10,7 @@ export const TweetProvider = ({ children }) => {
   const avatarSrc = avatar;
   const isRetweetedByCurrentUser = false;
   const isLikedByCurrentUser = false;
+  const date = new Date();
   return (
     <TweetContext.Provider
       value={{
@@ -19,6 +20,7 @@ export const TweetProvider = ({ children }) => {
         avatarSrc,
         isRetweetedByCurrentUser,
         isLikedByCurrentUser,
+        date,
       }}
     >
       {children}
