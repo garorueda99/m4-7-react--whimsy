@@ -30,6 +30,10 @@ export const TweetProvider = ({ children }) => {
         date,
         numOfLikes,
         numOfRetweets,
+        setNumOfRetweets,
+        setIsRetweeted,
+        setIsLiked,
+        setNumOfLikes,
       }}
     >
       {children}
