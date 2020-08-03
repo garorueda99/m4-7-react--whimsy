@@ -6,6 +6,7 @@ import Heart from "./Heart";
 import PoppingCircle from "./PoppingCircle";
 import ScaleIn from "./ScaleIn";
 import ConfettiPiece from "./ConfettiPiece";
+import Particle from "./Particle";
 
 const PARTICLE_COLORS = ["#e53935", "#1e88e5", "#43a047", "#fdd835", "#fb8c00"];
 
@@ -23,12 +24,17 @@ const LikeButton = ({ isLiked, size = 40 }) => {
         <Heart width={heartSize} isToggled={isLiked} />
       )}
       {range(12).map((i) => (
-        <ConfettiPiece
-          key={i}
-          angle={360 * (i / 12)}
-          distance={20}
-          color={PARTICLE_COLORS[0]}
-        />
+        <Particle>
+          {isLiked && (
+            <ConfettiPiece
+              key={i}
+              angle={360 * (i / 12)}
+              distance={20}
+              color={PARTICLE_COLORS[0]}
+              isLiked={isLiked}
+            />
+          )}
+        </Particle>
       ))}
     </Wrapper>
   );

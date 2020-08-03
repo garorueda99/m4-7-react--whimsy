@@ -9,8 +9,8 @@ const ConfettiPiece = ({ angle, distance, color }) => {
     <Circle
       style={{
         backgroundColor: color,
-        top: y + 15 + "px",
-        left: x + 15 + "px",
+        top: y - 2 + "px",
+        left: x - 1.5 + "px",
       }}
     ></Circle>
   );
@@ -19,8 +19,8 @@ const ConfettiPiece = ({ angle, distance, color }) => {
 const Circle = styled.div`
   position: absolute;
   border-radius: 50%;
-  width: 10px;
-  height: 10px;
+  width: 3px;
+  height: 3px;
 `;
 
 export default ConfettiPiece;
