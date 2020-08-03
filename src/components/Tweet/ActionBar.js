@@ -37,7 +37,7 @@ const ActionBar = () => {
       >
         <TweetActionIcon
           kind="retweet"
-          color={isRetweetedByCurrentUser ? "rgb(23, 191, 99)" : "black"}
+          color={isRetweetedByCurrentUser ? "rgb(23, 191, 99)" : ""}
         />
       </Action>
       <Action
