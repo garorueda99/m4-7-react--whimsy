@@ -2,27 +2,27 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const PoppingCircle = ({ size, color }) => {
-  return <Wrapper></Wrapper>;
+  return (
+    <Wrapper style={{ width: size, height: size, background: color }}></Wrapper>
+  );
 };
 
-const turnBlue = keyframes`
-  from {
-    color: inherit;
-    scale: 1;
-  }
-  to {
-    color: blue;
-    scale: 10.5;
-  }
+const makeMeGrow = keyframes`
+from {
+ scale: 0;
+ opacity: 1;
+}
+to {
+ scale: 1;
+ opacity: 0.35;
+}
 `;
 
 const Wrapper = styled.div`
   position: absolute;
   display: flex;
   border-radius: 50%;
-  border: 2px solid blue;
-  background-color: blue;
-  animation: ${turnBlue} 500ms;
+  animation: ${makeMeGrow} 800ms ease-in-out;
   scale: 0;
 `;
 
