@@ -8,11 +8,11 @@ const ScaleIn = ({ children }) => {
     transform: "scale(1)",
     from: {
       opacity: 0,
-      transform: "scale(1.6)",
+      transform: "scale(0.2)",
     },
     config: {
       tension: 400,
-      friction: 4.5,
+      friction: 6.5,
     },
   });
 
