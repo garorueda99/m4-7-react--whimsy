@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Particle from "./Particle";
 
 const ConfettiPiece = ({ angle, distance, color }) => {
@@ -16,10 +16,21 @@ const ConfettiPiece = ({ angle, distance, color }) => {
   );
 };
 
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
+
 const Circle = styled.div`
-  width: 10px;
-  height: 10px;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
+  opacity: 0;
+  animation: ${fadeOut} 650ms ease-out;
 `;
 
 const CenteredInsideParent = styled.div`

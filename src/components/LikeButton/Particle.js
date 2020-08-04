@@ -14,7 +14,9 @@ const Particle = ({ children, angle, distance }) => {
       transform: `translate(${x}px, ${y}px)`,
     },
     config: {
-      mass: 6,
+      mass: 2,
+      tension: 150,
+      friction: 8.5,
     },
   });
 
