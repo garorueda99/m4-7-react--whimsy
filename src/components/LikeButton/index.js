@@ -28,7 +28,7 @@ const LikeButton = ({ isLiked, size = 40 }) => {
             key={i}
             angle={360 * (i / 12)}
             distance={20}
-            color={PARTICLE_COLORS[0]}
+            color={PARTICLE_COLORS}
           />
         ))}
     </Wrapper>

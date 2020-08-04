@@ -7,6 +7,7 @@ const Particle = ({ children, angle, distance }) => {
   const y = Math.sin(angleInRads(angle)) * distance;
 
   const spring = useSpring({
+    zIndex: -1,
     from: {
       transform: `translate(0px, 0px)`,
     },

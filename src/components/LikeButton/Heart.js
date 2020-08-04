@@ -22,7 +22,7 @@ const Heart = ({ width, isToggled }) => (
 );
 
 const Svg = styled.svg`
-  z-index: 1;
+  z-index: 100;
   display: block;
   backface-visibility: hidden;
   fill: none;
