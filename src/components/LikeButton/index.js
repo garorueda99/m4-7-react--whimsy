@@ -24,17 +24,17 @@ const LikeButton = ({ isLiked, size = 40 }) => {
         <Heart width={heartSize} isToggled={isLiked} />
       )}
       {range(12).map((i) => (
-        <Particle>
+        <div>
           {isLiked && (
             <ConfettiPiece
               key={i}
               angle={360 * (i / 12)}
               distance={20}
-              color={PARTICLE_COLORS[0]}
+              color={"blue"}
               isLiked={isLiked}
             />
           )}
-        </Particle>
+        </div>
       ))}
     </Wrapper>
   );

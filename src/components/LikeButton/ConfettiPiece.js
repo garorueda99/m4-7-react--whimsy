@@ -1,26 +1,36 @@
 import React from "react";
 import styled from "styled-components";
+import Particle from "./Particle";
 
 const ConfettiPiece = ({ angle, distance, color }) => {
-  const angleInRads = (angle) => (angle * Math.PI) / 180;
-  const x = Math.cos(angleInRads(angle)) * distance;
-  const y = Math.sin(angleInRads(angle)) * distance;
   return (
-    <Circle
-      style={{
-        backgroundColor: color,
-        top: y - 2 + "px",
-        left: x - 1.5 + "px",
-      }}
-    ></Circle>
+    <CenteredInsideParent>
+      <Particle angle={angle} distance={distance}>
+        <Circle
+          style={{
+            backgroundColor: color,
+          }}
+        ></Circle>
+      </Particle>
+    </CenteredInsideParent>
   );
 };
 
 const Circle = styled.div`
-  position: absolute;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  width: 3px;
-  height: 3px;
+`;
+
+const CenteredInsideParent = styled.div`
+  z-index: 10;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export default ConfettiPiece;
