@@ -10,7 +10,7 @@ const ConfettiPiece = ({ angle, distance, color }) => {
           style={{
             backgroundColor: color,
           }}
-        ></Circle>
+        />
       </Particle>
     </CenteredInsideParent>
   );

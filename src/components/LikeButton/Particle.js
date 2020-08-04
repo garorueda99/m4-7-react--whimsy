@@ -6,21 +6,23 @@ const Particle = ({ children, angle, distance }) => {
   const x = Math.cos(angleInRads(angle)) * distance;
   const y = Math.sin(angleInRads(angle)) * distance;
 
-  const style = useSpring({
-    position: "absolute",
-    opacity: 1,
-    transform: `scale(1)`,
+  const spring = useSpring({
     from: {
-      opacity: 0,
-      transform: "scale(0.2)",
+      transform: `translate(0px, 0px)`,
+    },
+    to: {
+      transform: `translate(${x}px, ${y}px)`,
     },
     config: {
-      tension: 800,
-      friction: 3.5,
+      mass: 6,
     },
   });
 
-  return <animated.div style={style}>{children}</animated.div>;
+  return (
+    <animated.div style={{ ...spring, display: "block" }}>
+      {children}
+    </animated.div>
+  );
 };
 
 export default Particle;
